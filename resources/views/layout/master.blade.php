@@ -152,12 +152,13 @@
         
         <!-- SEARCH -->
         <div class="tada-search">
-			<form>
+			<form action="/search" method="get">
             	<div class="form-group-search">
-              		<input type="search" class="search-field" placeholder="Search and hit enter...">
+              		<input name="q" type="search" class="search-field" placeholder="Search and hit enter...">
               		<button type="submit" class="search-btn"><i class="icon-search4"></i></button>
             	</div>
           	</form>
+
         </div>
         
         
@@ -170,6 +171,7 @@
     <!-- *****************************************************************
     ** Section ***********************************************************
     ****************************************************************** -->
+    @yield('detail')
     @yield('content')
     @yield('post_content')
     

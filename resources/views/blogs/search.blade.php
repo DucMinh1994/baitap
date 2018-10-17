@@ -1,6 +1,4 @@
-{{-- kế thừa từ trang master --}}
-@extends('layout.master') 
-
+@extends('layout.master')
 {{-- thay đổi nội dung phần content --}}
 @section('content')
 
@@ -43,8 +41,8 @@
                {{$posts->links()}}
         <!-- NAVIGATION -->
         <div class="navigation">
-            <a href="{{$posts->previousPageUrl()}}" class="prev"><i class="icon-arrow-left8"></i> Previous Posts</a>
-            <a href="{{$posts->nextPageUrl()}}" class="next">Next Posts <i class="icon-arrow-right8"></i></a>
+            <a href="{{$posts->appends(['q' => $q])->previousPageUrl()}}" class="prev"><i class="icon-arrow-left8"></i> Previous Posts</a>
+            <a href="{{$posts->appends(['q' => $q])->nextPageUrl()}}" class="next">Next Posts <i class="icon-arrow-right8"></i></a>
             <div class="clearfix"></div>
         </div>
     

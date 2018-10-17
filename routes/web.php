@@ -33,7 +33,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('index',function(){
 
-	$posts = App\Post::all();
+	$posts = App\Post::paginate(5);
 	return view('blogs.index',[
 		'posts' => $posts
 	]);
@@ -49,4 +49,6 @@ Route::get('post',function(){
 Route::get('cate',function(){
 	return view('cate');
 });
-Route::get('index/{id}','PostController@show');
+// Route::get('index/{id}','PostController@show');
+Route::get('search','PostController@search');
+Route::get('post/{slug}','PostController@show');

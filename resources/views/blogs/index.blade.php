@@ -43,6 +43,7 @@
             
         </div><!-- #SLIDER -->
 @endsection
+
 @section('content')
 	    
 	<section class="tada-container content-posts">
@@ -61,7 +62,7 @@
                 </div>
                 <div class="post-text">
                 	<span class="date">{{$post->created_at}}</span>
-                    <h2><a href="/index/{{$post->id}}">{{$post->title}}</a></h2>
+                    <h2><a href="/post/{{$post->slug}}">{{$post->title}}</a></h2>
                     <p class="text">{{$post->description}}
                                     <a href="#"><i class="icon-arrow-right2"></i></a></p>                                 
                 </div>
@@ -78,15 +79,15 @@
             </article>
             @endforeach
         @endif
-        
+        {{$posts->links()}}
         	<!-- ARTICLE 2 -->
         	     
         
         
         	<!-- NAVIGATION -->
         	<div class="navigation">
-            	<a href="#" class="prev"><i class="icon-arrow-left8"></i> Previous Posts</a>
-                <a href="#" class="next">Next Posts <i class="icon-arrow-right8"></i></a>
+            	<a href="{{$posts->previousPageUrl()}}" class="prev"><i class="icon-arrow-left8"></i> Previous Posts</a>
+                <a href="{{$posts->nextPageUrl()}}" class="next">Next Posts <i class="icon-arrow-right8"></i></a>
                 <div class="clearfix"></div>
             </div>
         
@@ -180,18 +181,18 @@
                 	Tags
                 </h3>
             	<div class="tags-container">
-                    <a href="#">Audio</a>
-                    <a href="#">Travel</a>
-                    <a href="#">Food</a>
-                    <a href="#">Event</a>
-                    <a href="#">Wordpress</a>
-                    <a href="#">Video</a>
-                    <a href="#">Design</a>
-                    <a href="#">Sport</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Post</a> 
-                    <a href="#">Img</a>
-                    <a href="#">Masonry</a>                                    
+                    <a href="/search?q=Audio">Audio</a>
+                    <a href="/search?q=Travel">Travel</a>
+                    <a href="/search?q=Food">Food</a>
+                    <a href="/search?q=Event">Event</a>
+                    <a href="/search?q=Wordpress">Wordpress</a>
+                    <a href="/search?q=Video">Video</a>
+                    <a href="/search?q=Design">Design</a>
+                    <a href="/search?q=Sport">Sport</a>
+                    <a href="/search?q=Blog">Blog</a>
+                    <a href="/search?q=Post">Post</a> 
+                    <a href="/search?q=Img">Img</a>
+                    <a href="/search?q=Masonry">Masonry</a>                                    
                 </div>
             	<div class="clearfix"></div>
             </div> 

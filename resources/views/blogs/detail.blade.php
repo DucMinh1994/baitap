@@ -1,7 +1,7 @@
 
 @extends('layout.master')
 
-    @section('content')
+    @section('detail')
     <section class="tada-container content-posts page post-full-width">
 
 
