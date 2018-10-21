@@ -23,7 +23,7 @@ class PostController extends Controller
 
     public function show($slug){
     	$post = Post::where('slug',$slug)->first();
-        
+        $post->increment('view_count');
     	return view('blogs.detail',compact('post'));
     	//bo vietkey str_slug($title)
     }

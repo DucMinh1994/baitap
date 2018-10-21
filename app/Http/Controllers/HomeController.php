@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
 
 class HomeController extends Controller
 {
-	public function index(){
-    	$posts  = Post::paginate(5); // lấy tất cả bài viết bằng câu lệnh hàm all()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-    	return view('index',[
-    		'posts' => $posts // dữ liệu được truyền qua view bằng biến posts
-    	]);
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
